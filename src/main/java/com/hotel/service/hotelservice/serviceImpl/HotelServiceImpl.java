@@ -33,4 +33,10 @@ public class HotelServiceImpl implements HotelService {
     public List<Hotel> findAllHotels() {
         return hotelRepository.findAll();
     }
+
+    @Override
+    public String deleteHotels(String id) {
+      hotelRepository.deleteById(id);
+      return "Deleted sucessfully";
+    }
 }

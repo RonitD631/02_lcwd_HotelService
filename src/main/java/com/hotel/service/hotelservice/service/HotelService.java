@@ -10,4 +10,6 @@ public interface HotelService {
    Hotel findHotelById(String id);
 
    List<Hotel> findAllHotels();
+
+   String deleteHotels(String id);
 }

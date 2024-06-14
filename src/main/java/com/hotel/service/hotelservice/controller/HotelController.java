@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/hotels")
+@CrossOrigin
 public class HotelController {
 
     @Autowired
@@ -30,4 +31,13 @@ public class HotelController {
     public ResponseEntity<List<Hotel>> findAllHotels(){
         return new ResponseEntity<>(hotelService.findAllHotels(), HttpStatus.OK);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteHotels(@PathVariable String id){
+        return new ResponseEntity<>(hotelService.deleteHotels(id), HttpStatus.OK);
+    }
+
+
+
+
 }
